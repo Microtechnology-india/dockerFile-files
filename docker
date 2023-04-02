@@ -1,0 +1,221 @@
+// Docker
+
+Docker makes the process of application deployment very easy and efficient and resolves a lot of
+issues related to deploying applications.
+Docker is the world's leading software container platform
+Docker is a tool designed to make it easier to deploy and run application by using containers.
+Containers allow a developer to package up an application with all of the parts
+it needs, such as libraries and other dependencies, and ship it all out as one package.
+
+// Dockerfile -
+describes steps to create a docker image. it's like a recipe with all ingredients and steps necessary
+in making your dish.
+
+Developer ----> Dockerfile -----> Docker image ------> Docker Container ------>{ Container will have
+application with all its dependencies } -----------> Docker Hub -------> Pull image(Docker image---->Docker Container)
+
+// Virtualization vs Containerization
+
+To see version of docker ======
+docker -v / --version
+
+to see your images =======
+docker images
+
+how to pull any image using docker ======
+docker pull <image-name> / <image-name>:<versionname>/18
+
+to run docker =====
+docker run <image-name>
+
+to search images and see the information ====
+docker search <image-name>
+
+to get information about started/running container =====
+docker ps
+
+to get information / history about all containers ======
+docker ps -a
+
+to detach the container
+docker run --name <container new name / alias> -d <image>
+
+to run container continuosly in background without entering into the console of images =====
+docker run --name <container new name / alias> -it (interactive mode) -d (detached) <image>
+
+to run docker in background by entering into the console ====
+docker run --name <container new name / alias> -it (interactive mode) <image>
+
+to run the command of container ===
+docker exec (executive) -it <container / container_id> < GIVEN COMMAND>
+
+all detailed information about docker
+docker inspect <container name>
+
+to stop container ====
+docker stop <container name>
+
+to remove docker image or container ====
+docker rm <container id>
+
+to delete multiple container at a time
+docker rm <container id> <container id> <container id>
+
+to remove image from docker =====
+docker rmi <image name>
+
+to restart the container ===
+docker restart <container name>
+
+to see logs ====
+docker log <container name>
+
+if we want that docker to store data ====
+docker volume
+
+USEFUL COMMAND RELATED TO DOCKER HUB
+
+docker login
+docker commit
+docker push
+docker log
+docker copy
+docker volume
+docker logout
+docker build .
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+==================== :- Docker Images -: ========================================
+
+1. What are Images?
+   Docker images are templates used to create Docker containers
+   container is a running instance of image.
+
+2. Where are images stored?
+   Registries (e.g. docker hub)
+   can be stored locally or remote.
+
+3. Docker can build images automatically by reading the instructions from a Dockerfile.
+
+4. Containers are running instances of Docker Images.
+
+5. A single images can be used to create multiple containers.
+
+## Useful Images commands
+
+docker images --help
+docker images
+docker pull image
+docker images -q
+docker images -f 'dangling=false'
+docker images -f 'dangling=false' -q
+docker inspect
+docker history imageName
+docker run image docker rmi image
+docker rmi -f image
+
+======================================================
+=> Docker was created by Salomon Hykes
+Initial release - 13 March 2013
+
+1. Salomon Hykes started Docker in France as an internal p within dotCloud,
+   a platform-as-a-service company
+
+2. The software debuted to the public in Santa Clara at PyCon in 2013
+
+3. Docker was released as open source in March 2013
+
+4. Docker library is written in the Go programming language.
+
+==================== :- Docker Containers -: ========================================
+
+1. What are Containers ?
+   Containers are running instances of Docker images.
+
+A container image is a lightweight, stand-alone, executable package of
+a piece of software that includes everything needed to run it: code, runtime,
+system tools, system libraries, settings.
+
+Features of Containers :
+
+1. Lightweight
+2. Less resources are used
+3. Booting of containers is very fast
+4. Can start, stop, kill, remove containers easily and quickly.
+5. Operating System resources can be shared within Docker.
+
+Containers run on the same machine sharing the same Operating system Kernel,
+this makes it faster.
+
+You can use command :-
+docker container create
+to create container in stopped state.
+
+## useful Commands :-
+
+docker ps
+docker ps -a
+
+docker run ImageName
+
+docker start ContainerName/ID
+docker stop ContainerName/ID
+
+docker pause ContainerName/ID
+docker unpause ContainerName/ID
+
+docker top ContainerName/ID
+docker stats ContainerName/ID
+
+docker attach ContainerName/ID
+
+docker kill ContainerName/ID
+docker rm ContainerName/ID
+
+docker history ImageName/ID
+
+========================= :- Dockerfile -:========================= PWD
+A text file with instructions to build image.
+
+1. Create a file named Dockerfile
+2. Add instructions in Dockerfile
+3. Build dockerfile to create image
+4. Run image to create container
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+1. What is Docker?
+   Docker is the world's leading software container platform.
+
+2. How Docker works ?
+   An application inside a container can run on any system that has Docker installed.
+   So there is no need to build and configure app multiple times on different platforms.
+
+3. Difference between Virtualization and Containerization ?
+4. VM is piece of software that allows you to install other software inside of it so you basically
+   control it virtually as opposed to installing the software directly on the computer.
+5. While a container is a software that allows different functionalities of an applicaiton
+   independently.
+
+6. Application running on VM system can run different OS.
+7. While applications runnig in a container environment share a single OS.
+
+8. VM virtualizes the computer system.
+9. While containers virtualize the operating system only.
+
+10. VM size is very large.
+11. While the size of container is very light; i.e. a few megabytes.
+
+12. VM takes minutes to run, due to large size.
+13. While containers take a few seconds to run.
+
+14. VM uses a lot of system memory.
+15. While containers require very less memory.
+
+16. VM is more secure.
+17. While containers are less secure.
+
+18. VM's are useful when we require all of OS resources to run various application.
+19. While containers are useful when we are required to maximise the running application
+    using minimal servers.
