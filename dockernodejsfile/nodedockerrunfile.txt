@@ -1,0 +1,13 @@
+docker build -t express-docker-image .
+
+docker run --rm -d -p 5500:5500 --name express-docker-container express-docker-image
+
+docker ps 
+
+docker ps -a
+
+docker run -it -d -p 5500:5500 -v %cd% --name express-docker-container express-docker-image   For windows
+
+docker run --rm -it -d -p 5500:5500 -v $(pwd):/app --name express-docker-container express-docker-image   For mac and linux
+
+docker run --rm -it -d -p 5500:5500 -v --name express-docker-container express-docker-image
